@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+.lalezar-regular {
+  font-family: "Lalezar", system-ui;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.sidebar .active {
+  color: red;
+}
