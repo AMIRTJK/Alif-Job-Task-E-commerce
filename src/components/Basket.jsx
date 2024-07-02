@@ -93,7 +93,9 @@ const Basket = () => {
                   <div className="product-info flex gap-3">
                     <Avatar src={e.image} />
                     <div className="title">
-                      <p className="text-[14px] font-semibold">{e.title}</p>
+                      <p className="text-[14px] font-semibold max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap">
+                        {e.title}
+                      </p>
                       <p className="text-[14px] text-[orange]">{e.price} c.</p>
                     </div>
                   </div>
