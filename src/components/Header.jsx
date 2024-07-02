@@ -13,6 +13,8 @@ import { IconButton } from "@mui/material";
 import Basket from "./Basket";
 import SearchPopUp from "./SearchPopUp";
 
+import logoImage from "/logo.svg";
+
 const Header = () => {
   const [search, setSearch] = useState({ value: "", status: false });
 
@@ -46,12 +48,12 @@ const Header = () => {
             </aside>
             <li className="flex justify-center w-[45%]">
               <Link to="/">
-                <img src="/logo.svg" alt="" />
+                <img src={logoImage} alt="" />
               </Link>
             </li>
             <aside className="right flex items-center justify-end gap-20 w-[50%]">
               <li className="sidebar">
-                <NavLink to="/about-us">About us</NavLink>
+                <NavLink to="about-us">About us</NavLink>
               </li>
               <li className="relative w-[45%]">
                 <fieldset className="bg-[#EDF2F4] flex justify-between rounded-xl overflow-hidden py-[6px] px-[20px]">

@@ -1,10 +1,15 @@
 import React from "react";
+
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import { IconButton } from "@mui/material";
+
 import { Link } from "react-router-dom";
+
+import logoFooterImage from "/logo_footer.svg";
 
 const Footer = () => {
   return (
@@ -12,7 +17,7 @@ const Footer = () => {
       <div className="wrapper-footer p-[120px] bg-[#EDF2F4]">
         <ul className="flex justify-between items-center">
           <li className="flex flex-col gap-2 items-center w-[15%]">
-            <img src="/logo_footer.svg" alt="" />
+            <img src={logoFooterImage} alt="" />
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

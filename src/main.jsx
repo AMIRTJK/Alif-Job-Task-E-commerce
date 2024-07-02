@@ -13,35 +13,40 @@ import Blog from "./routes/Blog.jsx";
 import AboutUs from "./routes/AboutUs.jsx";
 import Product from "./routes/Product.jsx";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      errorElement: <ErrorPages />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "shop-all",
+          element: <ShopAll />,
+        },
+        {
+          path: "shop-all/:id",
+          element: <Product />,
+        },
+        {
+          path: "blog",
+          element: <Blog />,
+        },
+        {
+          path: "about-us",
+          element: <AboutUs />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    errorElement: <ErrorPages />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "shop-all",
-        element: <ShopAll />,
-      },
-      {
-        path: "shop-all/:id",
-        element: <Product />,
-      },
-      {
-        path: "blog",
-        element: <Blog />,
-      },
-      {
-        path: "about-us",
-        element: <AboutUs />,
-      },
-    ],
-  },
-]);
+    basename: "/Alif-Job-Task-E-commerce", // Указываем базовый путь
+  }
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>

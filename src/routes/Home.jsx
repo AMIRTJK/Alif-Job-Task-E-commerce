@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { Button } from "@mui/material";
 
+import phoneImage from "/phone.svg";
+
 const Home = () => {
   return (
     <section className="px-[120px] py-[100px]">
@@ -32,7 +34,7 @@ const Home = () => {
           </Link>
         </aside>
         <aside className="right">
-          <img src="/phone.svg" alt="" />
+          <img src={phoneImage} alt="" />
         </aside>
       </main>
     </section>
