@@ -10,7 +10,12 @@ const Card = ({ item }) => {
           <div className="content border-[1px] rounded-[10px] h-[500px] p-[44px] overflow-hidden">
             <img src={item?.image} alt="" className="w-full" />
           </div>
-          <p className="max-w-[60%]">{item?.title}</p>
+          <div className="content_info">
+            <p className="max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap">
+              {item?.title}
+            </p>
+            <p className="font-semibold">Цена: <span className="text-[orange] font-normal">{item?.price}</span></p>
+          </div>
         </div>
       </Link>
     </div>

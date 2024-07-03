@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { actions } from "../reducers/Shop/shop";
 
-import { IconButton, Avatar } from "@mui/material";
+import { IconButton, Avatar, Button } from "@mui/material";
 
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Basket = () => {
   const { setBasketProducts } = actions;
@@ -70,9 +71,11 @@ const Basket = () => {
     dispatch(setBasketProducts(storedBasketProducts));
   }, [dispatch, setBasketProducts]);
 
+  console.log(basketProducts);
+
   return (
-    <main>
-      <div className="content bg-[#fff] min-w-[750px]">
+    <main className="h-[100vh] relative">
+      <div className="content bg-[#fff] min-w-[750px] ">
         <div className="title flex justify-between items-center p-[15px] mb-[10px]">
           <p className="text-[18px] font-semibold ">Корзина</p>
           <button
@@ -82,7 +85,7 @@ const Basket = () => {
             Очистить корзину
           </button>
         </div>
-        <ul>
+        <ul className="category-scrollbar overflow-y-auto h-[80vh] ">
           {Array.isArray(basketProducts) &&
             basketProducts.map((e) => {
               return (
@@ -126,6 +129,22 @@ const Basket = () => {
             })}
         </ul>
       </div>
+      {basketProducts.length > 0 && (
+        <div className="сheckout-button absolute bottom-0 p-[15px] w-full">
+          <Button
+            variant="outlined"
+            sx={{
+              width: "100%",
+              textTransform: "none",
+              display: "flex",
+              gap: "5px",
+            }}
+          >
+            <ShoppingCartOutlinedIcon />
+            <p>Оформить заказ</p>
+          </Button>
+        </div>
+      )}
     </main>
   );
 };
