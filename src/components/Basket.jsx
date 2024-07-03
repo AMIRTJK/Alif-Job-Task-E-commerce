@@ -129,7 +129,7 @@ const Basket = () => {
             })}
         </ul>
       </div>
-      {basketProducts.length > 0 && (
+      {Array.isArray(basketProducts) && basketProducts.length > 0 && (
         <div className="сheckout-button absolute bottom-0 p-[15px] w-full">
           <Button
             variant="outlined"
